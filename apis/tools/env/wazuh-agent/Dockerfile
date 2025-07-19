@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS builder
+FROM ubuntu:24.10 AS builder
 
 # Install dependencies
 RUN apt-get update && apt-get install -y build-essential cmake make gcc git zip curl tar ninja-build pkg-config wget \
@@ -21,7 +21,7 @@ RUN cmake /wazuh-agent/src -B /wazuh-agent/build
 
 RUN cmake --build /wazuh-agent/build
 
-FROM ubuntu:24.04 AS agent
+FROM ubuntu:24.10 AS agent
 
 RUN apt update && apt install -y iputils-ping curl
 
