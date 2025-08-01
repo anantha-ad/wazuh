@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS builder
+FROM ubuntu:24.10 AS builder
 
 ENV LANG=en_US.utf8
 ENV TZ=America/New_York
@@ -51,7 +51,7 @@ COPY scripts/build.sh /tmp/build.sh
 
 RUN /tmp/build.sh
 
-FROM ubuntu:24.04 AS server
+FROM ubuntu:24.10 AS server
 
 ENV USER=wazuh-server
 ENV GROUP=wazuh-server
